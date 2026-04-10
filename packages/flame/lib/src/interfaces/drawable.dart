@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flame/components.dart';
 
-abstract interface class IImageDrawable {
+abstract interface class IDrawable {
   void draw(
     Canvas canvas, {
     Vector2? position,

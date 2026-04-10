@@ -15,7 +15,7 @@ import 'package:meta/meta.dart';
 /// the 4 sides only in the direction in which they are located and expanding
 /// the center in both directions.
 /// That allows you to have non distorted borders.
-class NineTileBox implements IImageDrawable {
+class NineTileBox implements IDrawable {
   static final _whitePaint = BasicPalette.white.paint();
 
   /// The sprite used to render the box, must be a 3x3 grid of square tiles.

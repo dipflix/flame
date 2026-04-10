@@ -246,7 +246,7 @@ class ParallaxAnimation extends ParallaxRenderer {
 
 /// Represents one layer in the parallax, draws out an image on a canvas in the
 /// manner specified by the parallaxImage.
-class ParallaxLayer implements IImageDrawable {
+class ParallaxLayer implements IDrawable {
   final ParallaxRenderer parallaxRenderer;
   late Vector2 velocityMultiplier;
   late Rect _paintArea;

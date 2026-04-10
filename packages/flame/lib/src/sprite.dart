@@ -16,7 +16,7 @@ import 'package:flame/src/palette.dart';
 /// in the Canvas the sprite is rendered).
 /// It also has a [paint] field that can be overwritten to apply a tint to this
 /// [Sprite] (default is white, meaning no tint).
-class Sprite implements IImageDrawable {
+class Sprite implements IDrawable {
   Paint paint = BasicPalette.white.paint();
   Image image;
   Rect src = Rect.zero;
