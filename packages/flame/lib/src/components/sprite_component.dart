@@ -123,7 +123,7 @@ class SpriteComponent extends PositionComponent with HasPaint {
   @mustCallSuper
   @override
   void render(Canvas canvas) {
-    sprite?.render(
+    sprite?.draw(
       canvas,
       size: size,
       overridePaint: paint,

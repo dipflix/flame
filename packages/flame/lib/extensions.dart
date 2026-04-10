@@ -1,4 +1,5 @@
 export 'src/extensions/aabb.dart';
+export 'src/extensions/anchor.dart';
 export 'src/extensions/canvas.dart';
 export 'src/extensions/color.dart';
 export 'src/extensions/double.dart';

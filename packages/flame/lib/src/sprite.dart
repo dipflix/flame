@@ -4,6 +4,7 @@ import 'package:flame/src/anchor.dart';
 import 'package:flame/src/cache/images.dart';
 import 'package:flame/src/flame.dart';
 import 'package:flame/src/image_composition.dart';
+import 'package:flame/src/interfaces.dart';
 import 'package:flame/src/palette.dart';
 
 /// A [Sprite] is a region of an [Image] that can be rendered in the Canvas.
@@ -15,7 +16,7 @@ import 'package:flame/src/palette.dart';
 /// in the Canvas the sprite is rendered).
 /// It also has a [paint] field that can be overwritten to apply a tint to this
 /// [Sprite] (default is white, meaning no tint).
-class Sprite {
+class Sprite implements IImageDrawable {
   Paint paint = BasicPalette.white.paint();
   Image image;
   Rect src = Rect.zero;
@@ -97,18 +98,19 @@ class Sprite {
     );
   }
 
-  /// Same as [render], but takes both the position and the size as a single
+  /// Same as [draw], but takes both the position and the size as a single
   /// [Rect].
   ///
   /// **Note**: only use this if you are already using [Rect]'s to represent
   /// both the position and dimension of your [Sprite]. If you are using
   /// [Vector2]s, prefer the other method.
+  @override
   void renderRect(
     Canvas canvas,
     Rect rect, {
     Paint? overridePaint,
   }) {
-    render(
+    draw(
       canvas,
       position: rect.topLeft.toVector2(),
       size: rect.size.toVector2(),
@@ -130,7 +132,8 @@ class Sprite {
   ///   topLeft.
   /// * [overridePaint]: paint to use. You can also change the paint on your
   ///   Sprite instance. Default is white.
-  void render(
+  @override
+  void draw(
     Canvas canvas, {
     Vector2? position,
     Vector2? size,

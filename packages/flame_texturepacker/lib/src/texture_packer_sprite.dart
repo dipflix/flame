@@ -93,7 +93,7 @@ class TexturePackerSprite extends Sprite {
   static final _tmpRenderOffset = Vector2.zero();
 
   @override
-  void render(
+  void draw(
     Canvas canvas, {
     Vector2? position,
     Vector2? size,
@@ -145,7 +145,7 @@ class TexturePackerSprite extends Sprite {
       // super class function.
       _tmpRenderSize.setFrom(_tmpRenderImageSize);
       _tmpRenderPosition.setFrom(_tmpRenderOffset);
-      return super.render(
+      return super.draw(
         canvas,
         position: _tmpRenderPosition,
         size: _tmpRenderSize,
@@ -164,7 +164,7 @@ class TexturePackerSprite extends Sprite {
     );
 
     _decorator?.applyChain(
-      (applyCanvas) => super.render(
+      (applyCanvas) => super.draw(
         applyCanvas,
         position: _tmpRenderPosition,
         size: _tmpRenderSize,

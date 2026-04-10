@@ -53,7 +53,7 @@ class Card extends PositionComponent {
     canvas.drawRRect(cardRRect, backBackgroundPaint);
     canvas.drawRRect(cardRRect, backBorderPaint1);
     canvas.drawRRect(backRRectInner, backBorderPaint2);
-    flameSprite.render(canvas, position: size / 2, anchor: Anchor.center);
+    flameSprite.draw(canvas, position: size / 2, anchor: Anchor.center);
   }
 
   static final Paint frontBackgroundPaint = Paint()
@@ -183,7 +183,7 @@ class Card extends PositionComponent {
       canvas.rotate(pi);
       canvas.translate(-size.x / 2, -size.y / 2);
     }
-    sprite.render(
+    sprite.draw(
       canvas,
       position: Vector2(relativeX * size.x, relativeY * size.y),
       anchor: Anchor.center,

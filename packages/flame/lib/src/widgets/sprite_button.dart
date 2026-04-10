@@ -290,6 +290,6 @@ class _ButtonPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     _size.setValues(size.width, size.height);
-    _sprite.render(canvas, size: _size);
+    _sprite.draw(canvas, size: _size);
   }
 }

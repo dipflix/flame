@@ -35,12 +35,12 @@ class SpritePainter extends CustomPainter {
     canvas.translateVector(boxAnchorPosition..sub(spriteAnchorPosition));
 
     if (_angle == 0) {
-      _sprite.render(canvas, size: paintSize, overridePaint: _paint);
+      _sprite.draw(canvas, size: paintSize, overridePaint: _paint);
     } else {
       canvas.renderRotated(
         _angle,
         spriteAnchorPosition,
-        (canvas) => _sprite.render(
+        (canvas) => _sprite.draw(
           canvas,
           size: paintSize,
           overridePaint: _paint,

@@ -155,7 +155,7 @@ void main() {
       final sprite = atlas.findSpriteByName('robot_jump')!;
       final canvas = _MockCanvas();
 
-      sprite.render(
+      sprite.draw(
         canvas,
         position: Vector2(100, 100),
         size: Vector2(384, 512),
@@ -177,7 +177,7 @@ void main() {
       final sprite = atlas.findSpriteByName('robot_jump')!;
       final canvas = _MockCanvas();
 
-      sprite.render(
+      sprite.draw(
         canvas,
         position: Vector2(100, 100),
         size: Vector2(192, 256),
@@ -196,7 +196,7 @@ void main() {
       final sprite = atlas.findSpriteByName('robot_jump')!;
       final canvas = _MockCanvas();
 
-      sprite.render(
+      sprite.draw(
         canvas,
         size: Vector2(192, 256),
       );
@@ -341,7 +341,7 @@ void main() {
       final sprite = atlas.findSpriteByName('robot_walk')!;
       final canvas = _MockCanvas();
 
-      sprite.render(
+      sprite.draw(
         canvas,
         position: Vector2(100, 100),
         size: Vector2(384, 512),
@@ -363,7 +363,7 @@ void main() {
       final sprite = atlas.findSpriteByName('robot_jump')!;
       final canvas = _MockCanvas();
 
-      sprite.render(
+      sprite.draw(
         canvas,
         position: Vector2(100, 100),
         size: Vector2(192, 256),
@@ -382,7 +382,7 @@ void main() {
       final sprite = atlas.findSpriteByName('robot_jump')!;
       final canvas = _MockCanvas();
 
-      sprite.render(
+      sprite.draw(
         canvas,
         size: Vector2(192, 256),
       );

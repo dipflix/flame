@@ -3,9 +3,11 @@ import 'dart:ui';
 
 import 'package:collection/collection.dart';
 import 'package:flame/cache.dart';
+import 'package:flame/components.dart';
 import 'package:flame/extensions.dart';
 import 'package:flame/game.dart';
 import 'package:flame/src/flame.dart';
+import 'package:flame/src/interfaces.dart';
 import 'package:flame/src/sprite_animation.dart';
 import 'package:flame/src/sprite_animation_ticker.dart';
 import 'package:flutter/painting.dart';
@@ -244,7 +246,7 @@ class ParallaxAnimation extends ParallaxRenderer {
 
 /// Represents one layer in the parallax, draws out an image on a canvas in the
 /// manner specified by the parallaxImage.
-class ParallaxLayer {
+class ParallaxLayer implements IImageDrawable {
   final ParallaxRenderer parallaxRenderer;
   late Vector2 velocityMultiplier;
   late Rect _paintArea;
@@ -326,7 +328,14 @@ class ParallaxLayer {
     );
   }
 
-  void render(Canvas canvas) {
+  @override
+  void draw(
+    Canvas canvas, {
+    Vector2? position,
+    Vector2? size,
+    Anchor anchor = Anchor.topLeft,
+    Paint? overridePaint,
+  }) {
     if (_paintArea.isEmpty) {
       return;
     }
@@ -567,7 +576,7 @@ class Parallax {
     canvas.clipRect(_clipRect);
     layers.forEach((layer) {
       canvas.save();
-      layer.render(canvas);
+      layer.draw(canvas);
       canvas.restore();
     });
     canvas.restore();

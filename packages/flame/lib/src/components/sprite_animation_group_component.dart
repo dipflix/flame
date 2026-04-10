@@ -200,7 +200,7 @@ class SpriteAnimationGroupComponent<T> extends PositionComponent with HasPaint {
   @mustCallSuper
   @override
   void render(Canvas canvas) {
-    animationTicker?.getSprite().render(
+    animationTicker?.getSprite().draw(
       canvas,
       size: size,
       overridePaint: paint,

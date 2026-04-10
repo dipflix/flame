@@ -79,7 +79,11 @@ class _MyComponent1 extends PositionComponent {
       size.toRect(),
       bgPaint,
     );
-    nineTileBox.draw(canvas, Vector2(25, 25), Vector2(250, 150));
+    nineTileBox.draw(
+      canvas,
+      position: Vector2(25, 25),
+      size: Vector2(250, 150),
+    );
   }
 }
 
@@ -107,6 +111,10 @@ class _MyComponent2 extends PositionComponent {
       size.toRect(),
       bgPaint,
     );
-    nineTileBox.draw(canvas, Vector2(25, 25), Vector2(250, 150));
+    nineTileBox.draw(
+      canvas,
+      position: Vector2(25, 25),
+      size: Vector2(250, 150),
+    );
   }
 }

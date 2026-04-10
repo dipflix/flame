@@ -26,7 +26,7 @@ class SpriteParticle extends Particle {
 
   @override
   void render(Canvas canvas) {
-    sprite.render(
+    sprite.draw(
       canvas,
       position: position,
       size: size,

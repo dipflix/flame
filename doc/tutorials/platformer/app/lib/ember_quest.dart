@@ -72,7 +72,7 @@ class EmberQuestGame extends FlameGame
         const (WaterEnemy) => WaterEnemy(
           gridPosition: block.gridPosition,
           xOffset: xPositionOffset,
-        ),
+        ) as Component,
         _ => throw UnimplementedError(),
       };
       world.add(component);

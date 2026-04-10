@@ -8,6 +8,7 @@ import 'package:flame/src/cache/value_cache.dart';
 import 'package:flame/src/camera/viewport.dart';
 import 'package:flame/src/components/core/component_tree_root.dart';
 import 'package:flame/src/effects/provider_interfaces.dart';
+import 'package:flame/src/interfaces.dart';
 import 'package:flutter/painting.dart';
 import 'package:meta/meta.dart';
 import 'package:ordered_set/ordered_set.dart';
@@ -67,7 +68,7 @@ import 'package:ordered_set/read_only_ordered_set.dart';
 /// You may also need to override [containsLocalPoint] if the component needs to
 /// respond to tap events or similar; the [componentsAtLocation] may also need
 /// to be overridden if you have reimplemented [renderTree].
-class Component {
+class Component implements IRenderable {
   Component({
     Iterable<Component>? children,
     int? priority,
@@ -189,26 +190,35 @@ class Component {
 
   /// Whether the component is currently executing its [onLoad] step.
   bool get isLoading => (_state & _loading) != 0;
+
   void _setLoadingBit() => _state |= _loading;
+
   void _clearLoadingBit() => _state &= ~_loading;
 
   /// Whether this component has completed its [onLoad] step.
   bool get isLoaded => (_state & _loaded) != 0;
+
   void _setLoadedBit() => _state |= _loaded;
 
   @internal
   bool get isMounting => (_state & _mounting) != 0;
+
   void _setMountingBit() => _state |= _mounting;
+
   void _clearMountingBit() => _state &= ~_mounting;
 
   /// Whether this component is currently added to a component tree.
   bool get isMounted => (_state & _mounted) != 0;
+
   void _setMountedBit() => _state |= _mounted;
+
   void _clearMountedBit() => _state &= ~_mounted;
 
   /// Whether the component is scheduled to be removed.
   bool get isRemoving => (_state & _removing) != 0;
+
   void _setRemovingBit() => _state |= _removing;
+
   void _clearRemovingBit() => _state &= ~_removing;
 
   /// Whether the component has been removed. Originally this flag is `false`,
@@ -216,7 +226,9 @@ class Component {
   /// from its parent. The flag becomes `false` again when the component is
   /// mounted to a new parent.
   bool get isRemoved => (_state & _removed) != 0;
+
   void _setRemovedBit() => _state |= _removed;
+
   void _clearRemovedBit() => _state &= ~_removed;
 
   Completer<void>? _loadCompleter;
@@ -278,6 +290,7 @@ class Component {
   /// ```
   Component? get parent => _parent;
   Component? _parent;
+
   set parent(Component? newParent) {
     if (newParent == null) {
       removeFromParent();
@@ -576,6 +589,7 @@ class Component {
   /// to or removed from its parent children list.
   void onChildrenChanged(Component child, ChildrenChangeType type) {}
 
+  @override
   void render(Canvas canvas) {}
 
   /// Renders a single [child] component onto [canvas].
@@ -905,6 +919,7 @@ class Component {
   /// to the parent.
   int get priority => _priority;
   int _priority;
+
   set priority(int newPriority) {
     if (_priority != newPriority) {
       _priority = newPriority;

@@ -43,12 +43,12 @@ class GameLayer extends DynamicLayer {
 
   @override
   void drawLayer() {
-    playerSprite.render(
+    playerSprite.draw(
       canvas,
       position: Vector2.all(50),
       size: Vector2.all(150),
     );
-    enemySprite.render(
+    enemySprite.draw(
       canvas,
       position: Vector2(250, 150),
       size: Vector2(100, 50),
@@ -65,7 +65,7 @@ class BackgroundLayer extends PreRenderedLayer {
 
   @override
   void drawLayer() {
-    sprite.render(
+    sprite.draw(
       canvas,
       position: Vector2(50, 200),
       size: Vector2(300, 150),

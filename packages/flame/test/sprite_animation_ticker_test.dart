@@ -195,4 +195,4 @@ void main() {
   });
 }
 
-class _MockSprite extends Mock implements Sprite {}
+base class _MockSprite extends Mock implements Sprite {}

@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flame/extensions.dart';
+import 'package:flame/src/interfaces.dart';
 import 'package:flame/src/particles/accelerated_particle.dart';
 import 'package:flame/src/particles/composed_particle.dart';
 import 'package:flame/src/particles/moving_particle.dart';
@@ -20,7 +21,7 @@ typedef ParticleGenerator = Particle Function(int);
 /// the whole Flutter framework. Each type of particle implements some
 /// particular behavior which then could be nested and combined to create
 /// the experience you are looking for.
-abstract class Particle {
+abstract class Particle implements IRenderable {
   /// Generates a given amount of particles and then combining them into one
   /// single [ComposedParticle].
   ///
@@ -79,6 +80,7 @@ abstract class Particle {
   ///
   /// Default behavior is empty, so that it's not required to override this in
   /// a [Particle] that renders nothing and serve as a behavior container.
+  @override
   void render(Canvas canvas) {}
 
   /// Updates the [_timer] of this [Particle].

@@ -1,9 +1,10 @@
 import 'dart:ui';
 
+import 'package:flame/src/interfaces.dart';
 import 'package:flame/src/layers/processors.dart';
 import 'package:meta/meta.dart';
 
-abstract class Layer {
+abstract class Layer implements IRenderable {
   List<LayerProcessor> preProcessors = [];
   List<LayerProcessor> postProcessors = [];
 
@@ -12,6 +13,7 @@ abstract class Layer {
   PictureRecorder? _recorder;
   Canvas? _canvas;
 
+  @override
   @mustCallSuper
   void render(Canvas canvas, {double x = 0.0, double y = 0.0}) {
     final picture = _picture;

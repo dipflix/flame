@@ -67,7 +67,7 @@ class IsometricTileMapComponent extends PositionComponent {
         if (element != -1) {
           _renderSprite = tileset.getSpriteById(element);
           final blockPosition = getBlockRenderPositionInts(j, i);
-          _renderSprite.render(
+          _renderSprite.draw(
             canvas,
             position: blockPosition,
             size: size,

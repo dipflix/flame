@@ -30,7 +30,7 @@ class _MySpriteComponent extends PositionComponent with HasVisibility {
 
   @override
   void render(Canvas canvas) {
-    sprite.render(canvas, anchor: Anchor.center);
+    sprite.draw(canvas, anchor: Anchor.center);
   }
 }
 

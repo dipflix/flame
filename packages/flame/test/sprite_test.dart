@@ -38,6 +38,6 @@ class _MyComponent extends PositionComponent {
         ..strokeWidth = 2,
     );
     // Expected: sprite is rendered in the center of the rect
-    sprite.render(canvas, position: size / 2, anchor: Anchor.center);
+    sprite.draw(canvas, position: size / 2, anchor: Anchor.center);
   }
 }

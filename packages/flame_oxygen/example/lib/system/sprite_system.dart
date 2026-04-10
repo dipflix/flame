@@ -10,6 +10,6 @@ class SpriteSystem extends BaseSystem {
     final size = entity.get<SizeComponent>()!.size;
     final sprite = entity.get<SpriteComponent>()?.sprite;
 
-    sprite?.render(canvas, size: size);
+    sprite?.draw(canvas, size: size);
   }
 }

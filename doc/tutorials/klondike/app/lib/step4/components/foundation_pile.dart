@@ -66,7 +66,7 @@ class FoundationPile extends PositionComponent implements Pile {
   @override
   void render(Canvas canvas) {
     canvas.drawRRect(KlondikeGame.cardRRect, _borderPaint);
-    suit.sprite.render(
+    suit.sprite.draw(
       canvas,
       position: size / 2,
       anchor: Anchor.center,

@@ -1,6 +1,9 @@
 import 'dart:ui';
 
+import 'package:flame/components.dart';
+import 'package:flame/extensions.dart';
 import 'package:flame/src/extensions/vector2.dart';
+import 'package:flame/src/interfaces.dart';
 import 'package:flame/src/palette.dart';
 import 'package:flame/src/sprite.dart';
 import 'package:meta/meta.dart';
@@ -12,7 +15,7 @@ import 'package:meta/meta.dart';
 /// the 4 sides only in the direction in which they are located and expanding
 /// the center in both directions.
 /// That allows you to have non distorted borders.
-class NineTileBox {
+class NineTileBox implements IImageDrawable {
   static final _whitePaint = BasicPalette.white.paint();
 
   /// The sprite used to render the box, must be a 3x3 grid of square tiles.
@@ -164,11 +167,22 @@ class NineTileBox {
   }
 
   /// Renders this nine box as a rectangle at [position] with size [size].
-  void draw(Canvas c, Vector2 position, Vector2 size, [Paint? overridePaint]) {
-    c.drawImageNine(
+  @override
+  void draw(
+    Canvas canvas, {
+    Vector2? position,
+    Vector2? size,
+    Anchor anchor = Anchor.topLeft,
+    Paint? overridePaint,
+  }) {
+    final drawPosition = position ?? Vector2.zero();
+    final drawSize = size ?? Vector2(destTileSize * 3.0, destTileSize * 3.0);
+    final rect = anchor.toRect(drawPosition, drawSize);
+
+    canvas.drawImageNine(
       sprite.image,
       center,
-      Rect.fromLTWH(position.x, position.y, size.x, size.y),
+      rect,
       overridePaint ?? _whitePaint,
     );
   }
