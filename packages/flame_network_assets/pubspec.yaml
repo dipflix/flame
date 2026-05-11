@@ -18,7 +18,8 @@ environment:
 
 dependencies:
   dev: ^1.0.0
-  flame: ^1.37.0
+  flame:
+    path: ../flame
   flutter:
     sdk: flutter
   http: ^1.2.1

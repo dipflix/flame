@@ -17,7 +17,8 @@ environment:
 
 dependencies:
   collection: ^1.17.1
-  flame: ^1.37.0
+  flame:
+    path: ../flame
   flutter:
     sdk: flutter
   spine_flutter: ^4.3.0

@@ -16,7 +16,8 @@ environment:
 
 dependencies:
   behavior_tree: ^0.1.5+1
-  flame: ^1.37.0
+  flame:
+    path: ../flame
   flutter:
     sdk: flutter
 

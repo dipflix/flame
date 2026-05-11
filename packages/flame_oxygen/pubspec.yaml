@@ -15,7 +15,8 @@ environment:
   flutter: ">=3.41.0"
 
 dependencies:
-  flame: ^1.37.0
+  flame:
+    path: ../flame
   flutter:
     sdk: flutter
   oxygen: ^0.3.1
