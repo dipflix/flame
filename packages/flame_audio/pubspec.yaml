@@ -19,7 +19,9 @@ environment:
 dependencies:
   audioplayers: ^6.2.0
   flame:
-    path: ../flame
+    git:
+      url: https://github.com/dipflix/flame
+      path: packages/flame
   flutter:
     sdk: flutter
   synchronized: ^3.1.0

@@ -12,7 +12,9 @@ dependencies:
   devtools_app_shared: ^0.3.1
   devtools_extensions: ^0.3.1
   flame:
-    path: ../flame
+    git:
+      url: https://github.com/dipflix/flame
+      path: packages/flame
   flutter:
     sdk: flutter
   flutter_riverpod: ^3.0.3

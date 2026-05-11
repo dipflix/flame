@@ -17,7 +17,9 @@ environment:
 dependencies:
   behavior_tree: ^0.1.5+1
   flame:
-    path: ../flame
+    git:
+      url: https://github.com/dipflix/flame
+      path: packages/flame
   flutter:
     sdk: flutter
 

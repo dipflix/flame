@@ -17,7 +17,9 @@ environment:
 
 dependencies:
   flame:
-    path: ../flame
+    git:
+      url: https://github.com/dipflix/flame
+      path: packages/flame
   flutter:
     sdk: flutter
   gamepads: ^0.1.10
